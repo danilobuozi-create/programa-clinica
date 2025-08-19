@@ -1,0 +1,15 @@
+{
+  "clinica": {
+    "nome": "Clínica Odonto",
+    "cnpj": "00.000.000/0000-00",
+    "cro": "CRO-PR 00000",
+    "epao": "EPAO 0000",
+    "endereco": "Rua Exemplo, 123 - Centro - Cidade/UF",
+    "telefone": "(41) 90000-0000",
+    "email": "contato@clinica.com.br",
+    "logo_path": "",
+    "assinatura_path": "",
+    "responsavel": "Dr(a). Nome Sobrenome",
+    "tema": "light"
+  }
+}

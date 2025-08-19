@@ -1,0 +1,13 @@
+\
+    <!doctype html><html><head><meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/css/print.css"></head><body>
+    <div class="row"><div><strong>{{ clinica.nome }}</strong><br>CRO {{ clinica.cro }}</div>
+    <div class="muted">{{ clinica.endereco }}<br>{{ clinica.telefone }}</div></div>
+    <h2>Receituário</h2>
+    <p><strong>Paciente:</strong> {{ paciente.nome }} — CPF {{ paciente.cpf | cpf_format }}</p>
+    <p><strong>Prescrição:</strong><br>{{ extras.prescricao | default('') | replace('\\n','<br>') | safe }}</p>
+    <p><strong>Posologia:</strong><br>{{ extras.posologia | default('') | replace('\\n','<br>') | safe }}</p>
+    <div class="sign">{% if clinica.assinatura_path %}<img src="{{ clinica.assinatura_path }}" style="height:50px"><br>{% endif %}
+    {{ usuario.nome }} — CRO {{ usuario.cro }}</div>
+    <div class="muted">{{ hoje | date('%d/%m/%Y') }}</div>
+    </body></html>

@@ -1,0 +1,15 @@
+\
+    <!doctype html><html><head><meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/css/print.css"></head><body>
+    <h2>Contrato de Prestação de Serviços Odontológicos</h2>
+    <p><strong>Contratante (Paciente):</strong> {{ paciente.nome }} — CPF {{ paciente.cpf | cpf_format }}</p>
+    <p><strong>Contratada (Clínica):</strong> {{ clinica.nome }} — CNPJ {{ clinica.cnpj }}</p>
+    <p><strong>Objeto:</strong> {{ extras.objeto | default('Tratamentos odontológicos especificados no plano de tratamento.') }}</p>
+    <p><strong>Valores:</strong> {{ extras.valor | default(0) | currency }}</p>
+    <p><strong>Condições:</strong><br>{{ extras.condicoes | default('') | replace('\\n','<br>') | safe }}</p>
+    <div class="row" style="margin-top:48px;">
+      <div>____________________________________<br>Paciente</div>
+      <div>____________________________________<br>Clínica</div>
+    </div>
+    <div class="muted">Data: {{ hoje | date('%d/%m/%Y') }}</div>
+    </body></html>

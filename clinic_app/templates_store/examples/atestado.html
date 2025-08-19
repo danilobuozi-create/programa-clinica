@@ -1,0 +1,16 @@
+\
+    <!doctype html><html><head><meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/css/print.css"></head><body>
+    <div class="muted"><strong>{{ clinica.nome }}</strong> • CRO {{ clinica.cro }} • EPAO {{ clinica.epao }}<br>
+    {{ clinica.endereco }} • {{ clinica.telefone }}</div>
+    <h2>Atestado Odontológico</h2>
+    <p>Declaro para os devidos fins que o(a) paciente <strong>{{ paciente.nome }}</strong>, CPF {{ paciente.cpf | cpf_format }},
+    foi atendido(a) em {{ hoje | date('%d/%m/%Y') }} das {{ extras.hora_inicio }} às {{ extras.hora_fim }}, realizando {{ extras.procedimento }}.
+    Recomenda-se repouso por {{ extras.repouso_dias }} dia(s). CID: {{ extras.cid }}.</p>
+    {% if paciente.alergias %}<p><em>Alergias:</em> {{ paciente.alergias }}</p>{% endif %}
+    <div class="sign">
+      {% if clinica.assinatura_path %}<img src="{{ clinica.assinatura_path }}" style="height:50px"/><br>{% endif %}
+      {{ usuario.nome }} — CRO {{ usuario.cro }}
+    </div>
+    <div class="muted">Documento gerado em {{ hoje | date('%d/%m/%Y %H:%M') }}</div>
+    </body></html>

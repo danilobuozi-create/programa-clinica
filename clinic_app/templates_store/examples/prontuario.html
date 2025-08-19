@@ -1,0 +1,12 @@
+\
+    <!doctype html><html><head><meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/css/print.css"></head><body>
+    <h2>Prontuário Odontológico</h2>
+    <p><strong>Paciente:</strong> {{ paciente.nome }} ({{ paciente.nascimento }} — {{ paciente.idade | default('') }})</p>
+    <p><strong>Contato:</strong> {{ paciente.telefone | telefone_format }} — {{ paciente.email }}</p>
+    <p><strong>Endereço:</strong> {{ paciente.endereco }}</p>
+    <h3>Anamnese</h3>
+    <p>{{ paciente.anamnese | default('Não informada.') }}</p>
+    <h3>Observações</h3>
+    <p>{{ paciente.obs | default('') }}</p>
+    </body></html>
